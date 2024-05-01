@@ -13,8 +13,9 @@
                     srcset=""></a>
             <ul>
                 <li><a href="/">Characters</a></li>
-                <li class="{{ Route::currentRouteName() === 'comics.index' || 'comics.show' ? 'active' : '' }}"><a
-                        href="{{ Route('comics.index') }}">Comics</a></li>
+                <li
+                    class="{{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'active' : '' }}">
+                    <a href="{{ Route('comics.index') }}">Comics</a></li>
                 <li><a href="/">Movies</a></li>
                 <li><a href="/">TV</a></li>
                 <li><a href="/">Games</a></li>
