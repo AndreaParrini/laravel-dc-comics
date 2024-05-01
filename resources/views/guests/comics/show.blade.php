@@ -5,7 +5,10 @@
         <section class="jumbotron">
 
         </section>
-        <section class="bg-primary p-2">
+        <section class="bg-primary p-2 p-relative">
+            <div class="container">
+                <img class="thumb_img" src="{{ $comic['thumb'] }}" alt="">
+            </div>
         </section>
         <section class="info-comic">
             <div class="container">
@@ -14,7 +17,7 @@
                         <h2>{{ $comic['title'] }}</h2>
                         <div class="d-flex w-100 bg-green">
                             <div class="box-price">
-                                <span>U.S. Price {{ $comic['price'] }}</span>
+                                <span>U.S. Price ${{ $comic['price'] }}</span>
                                 <span>Available</span>
                             </div>
                             <div class="avaibility">Check Avaibility <i class="fa-solid fa-caret-down"></i></div>
@@ -97,7 +100,7 @@
                         <div class="date">
                             <div class="col-3 text-nowrap">On Sale Date:</div>
                             <div class="col-9">
-                                {{ date('d-m-Y', strtotime($comic['sale_date'])) }}
+                                {{ date('M d Y', strtotime($comic['sale_date'])) }}
                             </div>
                         </div>
                     </div>
