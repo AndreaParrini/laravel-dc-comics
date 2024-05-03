@@ -83,6 +83,10 @@ img {
     padding: 2rem;
 }
 
+.py-2 {
+    padding: 2rem 0;
+}
+
 .bg-primary {
     background-color: var(--dc-comics-primary);
 }
@@ -127,12 +131,52 @@ img {
     color: var(--dc-comics-primary);
 }
 
+.color-light {
+    color: var(--dc-comics-light);
+}
+
 .gap-2 {
     gap: 2rem;
 }
 
 .p-relative {
     position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-control {
+    display: block;
+    border-radius: 0.3rem;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.5rem;
+    color: grey;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        scale: 1.2;
+    }
 }
 
 /* region header */
@@ -433,6 +477,15 @@ header {
             border-right: 0.1rem solid var(--dc-comics-footer-dark);
 
         }
+    }
+}
+
+.section-add-comic {
+    & h1 {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2rem 0;
+        border-bottom: 0.5rem solid var(--dc-comics-primary);
     }
 }
 
