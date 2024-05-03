@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('guests.comics.welcome');
+    return view('comics.welcome');
 });
 
 Route::resource('comics', ComicController::class);
