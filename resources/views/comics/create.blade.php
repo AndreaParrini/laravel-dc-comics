@@ -41,8 +41,8 @@
                     </div>
                     <div class="col-6">
                         <div class="">
-                            <label for="sales_date" class="form-label">Sales Date</label>
-                            <input type="date" class="form-control" name="sales_date" id="sales_date"
+                            <label for="sale_date" class="form-label">Sale Date</label>
+                            <input type="date" class="form-control" name="sale_date" id="sale_date"
                                 aria-describedby="helpId" value="{{ date('Y-m-d') }}" />
                             <small id="helpId" class="form-text text-muted">Insert here the date of sale your
                                 comic</small>
