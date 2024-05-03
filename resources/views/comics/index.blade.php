@@ -82,5 +82,9 @@
                 </div>
             </div>
         </section>
+        <a href="{{ route('comics.create') }}" class="add-comic">
+            <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+            <span>ADD</span>
+        </a>
     </section>
 @endsection
