@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('PageTitle', $comic['title'])
+
 @section('content')
     <section class="section_main bg-light">
         <section class="jumbotron">
