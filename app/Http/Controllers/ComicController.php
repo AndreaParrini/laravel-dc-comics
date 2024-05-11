@@ -13,7 +13,7 @@ class ComicController extends Controller
     public function index()
     {
         //
-        return view('comics.index', ['comics' => Comic::all()]);
+        return view('comics.admin.index', ['comics' => Comic::all()]);
     }
 
     /**
@@ -21,7 +21,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        return view('comics.admin.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
         //
-        return view('comics.show', compact('comic'));
+        return view('comics.admin.show', compact('comic'));
     }
 
     /**
@@ -51,6 +51,7 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         //
+        return view('comics.admin.edit', compact('comic'));
     }
 
     /**
@@ -59,6 +60,9 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         //
+        $comic->update($request->all());
+
+        return to_route('comics.show', compact('comic'));
     }
 
     /**
