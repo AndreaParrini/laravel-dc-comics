@@ -17,7 +17,7 @@
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-uppercase fw-medium">
                 <li><a class="nav-link" href="/">Characters</a></li>
                 <li class="nav-item">
-                    <a class='nav-link {{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'text-primary' : '' }}'
+                    <a class='nav-link {{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'bg-primary text-light' : '' }}'
                         href="{{ route('guest.comics.index') }}">Comics</a>
                 </li>
                 <li><a class="nav-link" href="/">Movies</a>
