@@ -13,7 +13,7 @@
                 <div class="row">
                     @foreach ($comics as $comic)
                         <div class="col-2 my-3">
-                            <a class="text-decoration-none" href="{{ route('comics.show', $comic) }}">
+                            <a class="text-decoration-none" href="{{ route('guest.comics.show', $comic) }}">
                                 <div class="ratio ratio-1x1 overflow-hidden">
                                     <div class="">
                                         <img class="mw-100 " src="{{ $comic['thumb'] }}" alt="" srcset="">
@@ -84,10 +84,6 @@
                 </div>
             </div>
         </section>
-        <a href="{{ route('comics.create') }}"
-            class="btn btn-light rounded-pill text-primary position-fixed end-0 bottom-0 m-5 fs-5">
-            <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
-            <span>ADD</span>
-        </a>
+
     </section>
 @endsection
