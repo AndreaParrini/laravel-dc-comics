@@ -1,33 +1,36 @@
 <header>
-    <div class="header-plus">
+    <div class="header-plus bg-primary">
         <div class="container">
-            <ul>
-                <li>Dc power visa<i class="fa-regular fa-registered"></i> </li>
-                <li>Addittional DC Sites<i class="fa-solid fa-caret-down"></i></li>
+            <ul class="nav-item d-flex gap-2 text-uppercase justify-content-end text-light">
+                <li class="nav-link mx-1"><span>Admin</span><i class="fa-solid fa-lock mx-1"></i></li>
+                <li class="nav-link mx-1"><span>Dc power visa</span><i class="fa-regular fa-registered  mx-2"></i> </li>
+                <li class="nav-link">Addittional DC Sites<i class="fa-solid fa-caret-down  mx-3"></i></li>
             </ul>
         </div>
     </div>
     <div class="container">
-        <nav>
+        <nav class="navbar navbar-expand-lg">
             <a href="/"><img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo"
                     srcset=""></a>
-            <ul>
-                <li><a href="/">Characters</a></li>
-                <li
-                    class="{{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'active' : '' }}">
-                    <a href="{{ Route('comics.index') }}">Comics</a></li>
-                <li><a href="/">Movies</a></li>
-                <li><a href="/">TV</a></li>
-                <li><a href="/">Games</a></li>
-                <li><a href="/">Collectibles</a></li>
-                <li><a href="/">Videos</a></li>
-                <li><a href="/">Fans</a></li>
-                <li><a href="/">News</a></li>
-                <li><a href="/">Shop<i class="fa-solid fa-caret-down"></i></a></li>
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-uppercase fw-medium">
+                <li><a class="nav-link" href="/">Characters</a></li>
+                <li class="nav-item">
+                    <a class='nav-link {{ Route::currentRouteName() === 'comics.index' || Route::currentRouteName() === 'comics.show' ? 'text-primary' : '' }}'
+                        href="{{ route('comics.index') }}">Comics</a>
+                </li>
+                <li><a class="nav-link" href="/">Movies</a>
+                </li>
+                <li><a class="nav-link" href="/">TV</a></li>
+                <li><a class="nav-link" href="/">Games</a></li>
+                <li><a class="nav-link" href="/">Collectibles</a></li>
+                <li><a class="nav-link" href="/">Videos</a></li>
+                <li><a class="nav-link" href="/">Fans</a></li>
+                <li><a class="nav-link" href="/">News</a></li>
+                <li><a class="nav-link" href="/">Shop<i class="fa-solid fa-caret-down"></i></a></li>
             </ul>
-            <div>
-                <input type="text" name="" id="" placeholder="Search">
-                <button><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
+            <div class="border-bottom border-primary pb-1">
+                <input class="border-0 text-end" type="text" name="" id="" placeholder="Search">
+                <button class="border-0 bg-light"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
             </div>
         </nav>
     </div>

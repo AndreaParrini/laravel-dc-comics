@@ -6,21 +6,21 @@
 
         </section>
         <div class="container">
-            <div class="title badge-primary">
+            <span class="title text-uppercase bg-primary py-2 px-3 text-light fs-5">
                 Current Series
-            </div>
+            </span>
             <div class="comics">
                 <div class="row">
                     @foreach ($comics as $comic)
-                        <div class="col-2">
-                            <a href="{{ route('comics.show', $comic) }}">
-                                <div class="card">
-                                    <div class="logo">
-                                        <img src="{{ $comic['thumb'] }}" alt="" srcset="">
+                        <div class="col-2 my-3">
+                            <a class="text-decoration-none" href="{{ route('comics.show', $comic) }}">
+                                <div class="ratio ratio-1x1 overflow-hidden">
+                                    <div class="">
+                                        <img class="mw-100 " src="{{ $comic['thumb'] }}" alt="" srcset="">
                                     </div>
-                                    <div class="name_comics">
-                                        {{ $comic['series'] }}
-                                    </div>
+                                </div>
+                                <div class="text-light text-uppercase mt-3">
+                                    {{ $comic['series'] }}
                                 </div>
                             </a>
 
@@ -30,15 +30,15 @@
                 </div>
             </div>
         </div>
-        <section class="load-more ">
-            <button class="badge-primary">load more</button>
+        <section class="text-center my-3 ">
+            <button class="btn btn-primary rounded-0 text-uppercase px-5">load more</button>
         </section>
-        <section class="section-digitalcomics">
+        <section class="section-digitalcomics py-5 bg-primary">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/buy-comics-digital-comics.png') }}"
+                        <div class="d-flex gap-4 text-light text-uppercase align-items-center">
+                            <img width="40" src="{{ Vite::asset('resources/images/buy-comics-digital-comics.png') }}"
                                 alt="Digital Comics">
                             <div>
                                 Digital Comics
@@ -46,8 +46,8 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/buy-comics-merchandise.png') }}"
+                        <div class="d-flex gap-4 text-light text-uppercase align-items-center">
+                            <img width="40" src="{{ Vite::asset('resources/images/buy-comics-merchandise.png') }}"
                                 alt="DC Merchandise">
                             <div>
                                 DC Merchandise
@@ -55,8 +55,8 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/buy-comics-subscriptions.png') }}"
+                        <div class="d-flex gap-4 text-light text-uppercase align-items-center">
+                            <img width="40" src="{{ Vite::asset('resources/images/buy-comics-subscriptions.png') }}"
                                 alt="Subscription">
                             <div>
                                 Subscription
@@ -64,16 +64,18 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/buy-comics-shop-locator.png') }}" alt="Shop Locator">
+                        <div class="d-flex gap-4 text-light text-uppercase align-items-center">
+                            <img width="40" src="{{ Vite::asset('resources/images/buy-comics-shop-locator.png') }}"
+                                alt="Shop Locator">
                             <div>
                                 Comic Shop Locator
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/buy-dc-power-visa.svg') }}" alt="DC Power Visa">
+                        <div class="d-flex gap-4 text-light text-uppercase align-items-center">
+                            <img width="40" src="{{ Vite::asset('resources/images/buy-dc-power-visa.svg') }}"
+                                alt="DC Power Visa">
                             <div>
                                 DC Power Visa
                             </div>
@@ -82,7 +84,8 @@
                 </div>
             </div>
         </section>
-        <a href="{{ route('comics.create') }}" class="add-comic">
+        <a href="{{ route('comics.create') }}"
+            class="btn btn-light rounded-pill text-primary position-fixed end-0 bottom-0 m-5 fs-5">
             <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
             <span>ADD</span>
         </a>
