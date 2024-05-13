@@ -95,7 +95,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $comics->links() }}
+            {{ $comics->links('pagination::bootstrap-5') }}
         </div>
         <a href="{{ route('comics.create') }}"
             class="btn btn-light rounded-pill text-primary position-fixed end-0 bottom-0 m-5 fs-5">
