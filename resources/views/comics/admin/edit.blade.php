@@ -10,6 +10,7 @@
         <h3 class="py-3 bg-primary text-light text-center ">
             Modify {{ $comic['title'] }}
         </h3>
+        @include('partials.validations-errors')
         <div class="container py-2">
             <form action="{{ route('comics.update', $comic) }}" method="post">
                 @csrf
@@ -19,10 +20,14 @@
                     <div class="col-6">
                         <div class="">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" id="title"
-                                aria-describedby="helpId" placeholder="" value="{{ $comic['title'] }}" />
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                                name="title" id="title" aria-describedby="helpId" placeholder=""
+                                value="{{ $comic['title'] }}" />
                             <small id="helpId" class="form-text text-muted">Insert here the title of your new
                                 comic</small>
+                            @error('title')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-6">
@@ -30,51 +35,74 @@
                             <img width="150" src="{{ $comic['thumb'] }}" alt="">
                             <div class="w-100">
                                 <label for="thumb" class="form-label">Thumb</label>
-                                <input type="text" class="form-control" name="thumb" id="thumb"
-                                    aria-describedby="helpId" placeholder="Es. https://picsum.photos/200/300"
-                                    value="{{ $comic['thumb'] }}" />
+                                <input type="text" class="form-control @error('thumb') is-invalid @enderror"
+                                    name="thumb" id="thumb" aria-describedby="helpId"
+                                    placeholder="Es. https://picsum.photos/200/300" value="{{ $comic['thumb'] }}" />
                                 <small id="helpId" class="form-text text-muted">Insert here the thumb of comic</small>
+                                @error('thumb')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-4">
                             <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" step="0.01" name="price" id="price"
-                                aria-describedby="helpId" placeholder="Es. 19.99" value="{{ $comic['price'] }}" />
+                            <input type="number" class="form-control @error('price') is-invalid @enderror" step="0.01"
+                                name="price" id="price" aria-describedby="helpId" placeholder="Es. 19.99"
+                                value="{{ $comic['price'] }}" />
                             <small id="helpId" class="form-text text-muted">Insert price of comic</small>
+                            @error('price')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-4">
                             <label for="sale_date" class="form-label">Sale Date</label>
-                            <input type="date" class="form-control" name="sale_date" id="sale_date"
-                                aria-describedby="helpId" value="{{ $comic['sale_date'] }}" />
+                            <input type="date" class="form-control @error('sale_date') is-invalid @enderror"
+                                name="sale_date" id="sale_date" aria-describedby="helpId"
+                                value="{{ $comic['sale_date'] }}" />
                             <small id="helpId" class="form-text text-muted">Insert here the date of sale your
                                 comic</small>
+                            @error('sale_date')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-4">
                             <label for="type" class="form-label">Type</label>
-                            <input type="text" class="form-control" name="type" id="type"
-                                aria-describedby="helpId" placeholder="Es. comic book" value="{{ $comic['type'] }}" />
+                            <input type="text" class="form-control @error('type') is-invalid @enderror" name="type"
+                                id="type" aria-describedby="helpId" placeholder="Es. comic book"
+                                value="{{ $comic['type'] }}" />
                             <small id="helpId" class="form-text text-muted">Insert type of comic</small>
+                            @error('type')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-4">
                             <label for="series" class="form-label">Series</label>
-                            <input type="text" class="form-control" name="series" id="series"
-                                aria-describedby="helpId" placeholder="Es. Action Comics" value="{{ $comic['series'] }}" />
+                            <input type="text" class="form-control @error('series') is-invalid @enderror" name="series"
+                                id="series" aria-describedby="helpId" placeholder="Es. Action Comics"
+                                value="{{ $comic['series'] }}" />
                             <small id="helpId" class="form-text text-muted">Insert series of comic</small>
+                            @error('series')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="mb-4">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" name="description" id="description" cols="30" rows="10">{{ $comic['description'] }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
+                                cols="30" rows="10">{{ $comic['description'] }}</textarea>
                             <small id="helpId" class="form-text text-muted">Insert a description of comic</small>
+                            @error('description')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
