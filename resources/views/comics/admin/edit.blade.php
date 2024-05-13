@@ -22,7 +22,7 @@
                             <label for="title" class="form-label">Title</label>
                             <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
                                 name="title" id="title" aria-describedby="helpId" placeholder=""
-                                value="{{ $comic['title'] }}" />
+                                value="{{ old('title', $comic['title']) }}" />
                             <small id="helpId" class="form-text text-muted">Insert here the title of your new
                                 comic</small>
                             @error('title')
@@ -37,7 +37,8 @@
                                 <label for="thumb" class="form-label">Thumb</label>
                                 <input type="text" class="form-control @error('thumb') is-invalid @enderror"
                                     name="thumb" id="thumb" aria-describedby="helpId"
-                                    placeholder="Es. https://picsum.photos/200/300" value="{{ $comic['thumb'] }}" />
+                                    placeholder="Es. https://picsum.photos/200/300"
+                                    value="{{ old('thumb', $comic['thumb']) }}" />
                                 <small id="helpId" class="form-text text-muted">Insert here the thumb of comic</small>
                                 @error('thumb')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +51,7 @@
                             <label for="price" class="form-label">Price</label>
                             <input type="number" class="form-control @error('price') is-invalid @enderror" step="0.01"
                                 name="price" id="price" aria-describedby="helpId" placeholder="Es. 19.99"
-                                value="{{ $comic['price'] }}" />
+                                value="{{ old('price', $comic['price']) }}" />
                             <small id="helpId" class="form-text text-muted">Insert price of comic</small>
                             @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -62,7 +63,7 @@
                             <label for="sale_date" class="form-label">Sale Date</label>
                             <input type="date" class="form-control @error('sale_date') is-invalid @enderror"
                                 name="sale_date" id="sale_date" aria-describedby="helpId"
-                                value="{{ $comic['sale_date'] }}" />
+                                value="{{ old('sale_date', $comic['sale_date']) }}" />
                             <small id="helpId" class="form-text text-muted">Insert here the date of sale your
                                 comic</small>
                             @error('sale_date')
@@ -75,7 +76,7 @@
                             <label for="type" class="form-label">Type</label>
                             <input type="text" class="form-control @error('type') is-invalid @enderror" name="type"
                                 id="type" aria-describedby="helpId" placeholder="Es. comic book"
-                                value="{{ $comic['type'] }}" />
+                                value="{{ old('type', $comic['type']) }}" />
                             <small id="helpId" class="form-text text-muted">Insert type of comic</small>
                             @error('type')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -87,7 +88,7 @@
                             <label for="series" class="form-label">Series</label>
                             <input type="text" class="form-control @error('series') is-invalid @enderror" name="series"
                                 id="series" aria-describedby="helpId" placeholder="Es. Action Comics"
-                                value="{{ $comic['series'] }}" />
+                                value="{{ old('series', $comic['series']) }}" />
                             <small id="helpId" class="form-text text-muted">Insert series of comic</small>
                             @error('series')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -98,7 +99,7 @@
                         <div class="mb-4">
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                                cols="30" rows="10">{{ $comic['description'] }}</textarea>
+                                cols="30" rows="10">{{ old('description', $comic['description']) }}</textarea>
                             <small id="helpId" class="form-text text-muted">Insert a description of comic</small>
                             @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
