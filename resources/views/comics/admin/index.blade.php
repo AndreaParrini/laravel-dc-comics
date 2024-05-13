@@ -35,14 +35,22 @@
                                 <td class="p-2">{{ $comic->type }}</td>
                                 <td class="p-2">{{ $comic->series }}</td>
                                 <td class="text-nowrap">
-                                    <a class="" href="{{ route('comics.show', $comic) }}"><i
-                                            class="fa-solid fa-eye fa-lg p-2 text-success"></i></a>
-                                    <a class="" href="{{ route('comics.edit', $comic) }}"><i
-                                            class="fa-solid fa-pen fa-lg p-2 text-secondary"></i></a>
-                                    <a class="" href="{{ route('comics.destroy', $comic) }}">
-                                        <i class="fa-solid fa-trash fa-lg p-2 text-danger"></i>
-                                    </a>
+                                    <div class="d-flex">
+                                        <a class="text-decoration-none" href="{{ route('comics.show', $comic) }}">
+                                            <i class="fa-solid fa-eye fa-lg p-2 text-success"></i>
+                                        </a>
+                                        <a class="text-decoration-none" href="{{ route('comics.edit', $comic) }}">
+                                            <i class="fa-solid fa-pen fa-lg p-2 text-secondary"></i>
+                                        </a>
+                                        <form action="{{ route('comics.destroy', $comic) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
 
+                                            <button type="submit" class="border-0 bg-transparent">
+                                                <i class="fa-solid fa-trash fa-lg p-2 text-danger"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
